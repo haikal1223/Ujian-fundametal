@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <style>
+    table,tr,td{
+        border: 1px solid black;
+        padding: 25px;
+        border-collapse: collapse
+    }
+    </style>
+</head>
+<body>
+    <center>
+            <table>
+                    <thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h1>Drawing Tools</h1>
+                                    <br>
+                                    1. Persegi <br><br>
+                                    2. Segitiga Siku Siku Rata Kiri <br><br>
+                                    3. Segitiga Siku Siku Rata Kanan <br><br>
+                                    Jenis Bangunan: <br><br>
+                                    <input type="number" id="jenis"> 
+                                    <br><br>
+                                    Ukuran: <br><br>
+                                    <input type="number" id="banyak">
+                                    <br><br>
+                                    <input type="button" value = 'Lihat' onclick="tombol()">
+                                    <br><br>
+                                    <p></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </thead>
+                </table>
+    </center>
+    
+    <script>
+      
+            function tombol(){
+                var tipe = document.getElementById('jenis').value
+            var ukuran = document.getElementById("banyak").value
+                if(tipe == 1){
+                    hasil = ''
+for(i =  1; i <=5;i++){
+    for(j = 1; j <5; j++){
+        hasil+= '*'
+    }
+    hasil+= '*'
+    hasil+='<br>'
+                }
+                document.getElementsByTagName('p')[0].innerHTML=hasil
+            }else if(tipe == 2){
+                var output = ''
+                    for(i = 0; i < ukuran; i++){
+                        for(j = 0; j <=i;j++){
+                            output+='*'
+                        }
+                        output+='<br>'
+                    }
+                document.getElementsByTagName('p')[0].innerHTML = output
+            }else if(tipe == 3){
+                var output =''
+                    for(i = 0 ;i < ukuran;i++){
+                        for(j = 0; j <=i;j++){
+                            for(k =ukuran; k < 0;k++){
+                                output+=' '
+                            }
+                            output+='<br>'
+                        }
+                        output+='*'
+                    }
+                    document.getElementsByTagName('p')[0].innerHTML=output
+            }
+
+            }
+           
+            </script>
+</body>
+</html>
